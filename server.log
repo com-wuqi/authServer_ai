@@ -1,0 +1,277 @@
+INFO:     Will watch for changes in these directories: ['/home/composer/test/test1']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [20874] using StatReload
+INFO:     Started server process [20938]
+INFO:     Waiting for application startup.
+2025-11-28 15:04:37,324 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:04:37,325 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("user")
+2025-11-28 15:04:37,326 INFO sqlalchemy.engine.Engine [raw sql] ()
+2025-11-28 15:04:37,329 INFO sqlalchemy.engine.Engine COMMIT
+INFO:     Application startup complete.
+INFO:     127.0.0.1:39692 - "GET /health HTTP/1.1" 200 OK
+2025-11-28 15:07:42,698 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:07:42,711 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:07:42,712 INFO sqlalchemy.engine.Engine [generated in 0.00099s] ('testuser',)
+2025-11-28 15:07:42,716 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.email = ?
+2025-11-28 15:07:42,716 INFO sqlalchemy.engine.Engine [generated in 0.00057s] ('test@example.com',)
+2025-11-28 15:07:45,458 INFO sqlalchemy.engine.Engine INSERT INTO user (username, email, full_name, is_active, is_superuser, hashed_password, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-28 15:07:45,460 INFO sqlalchemy.engine.Engine [generated in 0.00666s] ('testuser', 'test@example.com', 'Test User', 1, 0, '$2b$12$UfNkP00avm0nohfwv0BPZOAfsLC7yv7/9QVqd/XBTkOBdB5UsI6ce', '2025-11-28 15:07:45.444479', '2025-11-28 15:07:45.444496')
+2025-11-28 15:07:45,484 INFO sqlalchemy.engine.Engine COMMIT
+2025-11-28 15:07:45,581 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:07:45,618 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.id = ?
+2025-11-28 15:07:45,619 INFO sqlalchemy.engine.Engine [generated in 0.00117s] (1,)
+INFO:     127.0.0.1:56412 - "POST /auth/register HTTP/1.1" 200 OK
+2025-11-28 15:07:45,662 INFO sqlalchemy.engine.Engine ROLLBACK
+2025-11-28 15:07:45,737 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:07:45,741 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:07:45,742 INFO sqlalchemy.engine.Engine [cached since 3.031s ago] ('testuser',)
+INFO:     127.0.0.1:56414 - "POST /auth/login HTTP/1.1" 200 OK
+2025-11-28 15:07:46,862 INFO sqlalchemy.engine.Engine ROLLBACK
+2025-11-28 15:07:47,090 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:07:47,098 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:07:47,102 INFO sqlalchemy.engine.Engine [cached since 4.391s ago] ('testuser',)
+INFO:     127.0.0.1:56428 - "GET /auth/me HTTP/1.1" 200 OK
+2025-11-28 15:07:47,151 INFO sqlalchemy.engine.Engine ROLLBACK
+2025-11-28 15:09:15,129 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:15,129 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:09:15,130 INFO sqlalchemy.engine.Engine [cached since 92.42s ago] ('user72',)
+2025-11-28 15:09:15,147 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.email = ?
+2025-11-28 15:09:15,148 INFO sqlalchemy.engine.Engine [cached since 92.43s ago] ('user72@example.com',)
+2025-11-28 15:09:17,586 INFO sqlalchemy.engine.Engine INSERT INTO user (username, email, full_name, is_active, is_superuser, hashed_password, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-28 15:09:17,591 INFO sqlalchemy.engine.Engine [cached since 92.14s ago] ('user72', 'user72@example.com', 'User 72', 1, 0, '$2b$12$ZCoYcpqpESb1NVbRH2mYHen3705C5ncI2TYUYZLjBZDHYpC6ugxmq', '2025-11-28 15:09:17.584602', '2025-11-28 15:09:17.584614')
+2025-11-28 15:09:17,629 INFO sqlalchemy.engine.Engine COMMIT
+2025-11-28 15:09:17,707 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:17,708 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.id = ?
+2025-11-28 15:09:17,708 INFO sqlalchemy.engine.Engine [cached since 92.09s ago] (2,)
+INFO:     127.0.0.1:60404 - "POST /auth/register HTTP/1.1" 200 OK
+2025-11-28 15:09:17,792 INFO sqlalchemy.engine.Engine ROLLBACK
+2025-11-28 15:09:17,809 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:17,833 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:09:17,862 INFO sqlalchemy.engine.Engine [cached since 95.15s ago] ('user73',)
+2025-11-28 15:09:17,948 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.email = ?
+2025-11-28 15:09:17,978 INFO sqlalchemy.engine.Engine [cached since 95.26s ago] ('user73@example.com',)
+2025-11-28 15:09:20,167 INFO sqlalchemy.engine.Engine INSERT INTO user (username, email, full_name, is_active, is_superuser, hashed_password, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-28 15:09:20,171 INFO sqlalchemy.engine.Engine [cached since 94.72s ago] ('user73', 'user73@example.com', 'User 73', 1, 0, '$2b$12$sBP1dLJM5yoZX0kf.5mpz.x83ZeWxYzjE5Dls2mKZd1bw8mx2IoC2', '2025-11-28 15:09:20.166251', '2025-11-28 15:09:20.166266')
+2025-11-28 15:09:20,174 INFO sqlalchemy.engine.Engine COMMIT
+2025-11-28 15:09:20,342 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:20,363 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.id = ?
+2025-11-28 15:09:20,372 INFO sqlalchemy.engine.Engine [cached since 94.75s ago] (3,)
+INFO:     127.0.0.1:60406 - "POST /auth/register HTTP/1.1" 200 OK
+2025-11-28 15:09:20,436 INFO sqlalchemy.engine.Engine ROLLBACK
+2025-11-28 15:09:20,484 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:20,485 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:09:20,486 INFO sqlalchemy.engine.Engine [cached since 97.77s ago] ('userlong',)
+2025-11-28 15:09:20,489 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.email = ?
+2025-11-28 15:09:20,493 INFO sqlalchemy.engine.Engine [cached since 97.78s ago] ('userlong@example.com',)
+2025-11-28 15:09:23,086 INFO sqlalchemy.engine.Engine INSERT INTO user (username, email, full_name, is_active, is_superuser, hashed_password, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-28 15:09:23,087 INFO sqlalchemy.engine.Engine [cached since 97.63s ago] ('userlong', 'userlong@example.com', 'User Long', 1, 0, '$2b$12$gPlbnu9VxGDfGiyxf3hBQOSiVMAZL0bROcTfu4T5BE9eON3nM4YyG', '2025-11-28 15:09:23.086072', '2025-11-28 15:09:23.086078')
+2025-11-28 15:09:23,087 INFO sqlalchemy.engine.Engine COMMIT
+2025-11-28 15:09:23,151 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:23,156 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.id = ?
+2025-11-28 15:09:23,157 INFO sqlalchemy.engine.Engine [cached since 97.54s ago] (4,)
+INFO:     127.0.0.1:60416 - "POST /auth/register HTTP/1.1" 200 OK
+2025-11-28 15:09:23,171 INFO sqlalchemy.engine.Engine ROLLBACK
+2025-11-28 15:09:23,197 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:23,198 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:09:23,198 INFO sqlalchemy.engine.Engine [cached since 100.5s ago] ('testuser',)
+2025-11-28 15:09:23,200 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:50976 - "POST /auth/register HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:53344 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53356 - "GET / HTTP/1.1" 200 OK
+2025-11-28 15:09:48,864 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:48,867 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:09:48,868 INFO sqlalchemy.engine.Engine [cached since 126.2s ago] ('testuser',)
+2025-11-28 15:09:48,873 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:53358 - "POST /auth/register HTTP/1.1" 400 Bad Request
+2025-11-28 15:09:48,908 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:48,909 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:09:48,909 INFO sqlalchemy.engine.Engine [cached since 126.2s ago] ('testuser',)
+2025-11-28 15:09:48,915 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:53362 - "POST /auth/register HTTP/1.1" 400 Bad Request
+2025-11-28 15:09:48,977 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:48,977 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:09:48,977 INFO sqlalchemy.engine.Engine [cached since 126.3s ago] ('testuser2',)
+2025-11-28 15:09:48,979 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.email = ?
+2025-11-28 15:09:48,979 INFO sqlalchemy.engine.Engine [cached since 126.3s ago] ('test@example.com',)
+2025-11-28 15:09:48,980 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:53370 - "POST /auth/register HTTP/1.1" 400 Bad Request
+2025-11-28 15:09:49,013 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:49,018 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:09:49,019 INFO sqlalchemy.engine.Engine [cached since 126.3s ago] ('longpassworduser',)
+2025-11-28 15:09:49,024 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.email = ?
+2025-11-28 15:09:49,024 INFO sqlalchemy.engine.Engine [cached since 126.3s ago] ('long@example.com',)
+2025-11-28 15:09:51,418 INFO sqlalchemy.engine.Engine INSERT INTO user (username, email, full_name, is_active, is_superuser, hashed_password, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-28 15:09:51,419 INFO sqlalchemy.engine.Engine [cached since 126s ago] ('longpassworduser', 'long@example.com', 'Long Password User', 1, 0, '$2b$12$NrTDppzlpPgOLWJ3uXAyD.J3o6dAguPKidiKkHnh.6TxkPslHws2e', '2025-11-28 15:09:51.416416', '2025-11-28 15:09:51.416430')
+2025-11-28 15:09:51,424 INFO sqlalchemy.engine.Engine COMMIT
+2025-11-28 15:09:51,487 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:51,494 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.id = ?
+2025-11-28 15:09:51,495 INFO sqlalchemy.engine.Engine [cached since 125.9s ago] (5,)
+INFO:     127.0.0.1:53378 - "POST /auth/register HTTP/1.1" 200 OK
+2025-11-28 15:09:51,521 INFO sqlalchemy.engine.Engine ROLLBACK
+2025-11-28 15:09:51,576 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:51,578 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:09:51,578 INFO sqlalchemy.engine.Engine [cached since 128.9s ago] ('maxpassworduser',)
+2025-11-28 15:09:51,584 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.email = ?
+2025-11-28 15:09:51,587 INFO sqlalchemy.engine.Engine [cached since 128.9s ago] ('max@example.com',)
+2025-11-28 15:09:53,049 INFO sqlalchemy.engine.Engine INSERT INTO user (username, email, full_name, is_active, is_superuser, hashed_password, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-28 15:09:53,062 INFO sqlalchemy.engine.Engine [cached since 127.6s ago] ('maxpassworduser', 'max@example.com', 'Max Password User', 1, 0, '$2b$12$h.gFbL2a8ErjwBR5Fv923O2L6LsESaHyquz7M/HbZR3sb3g6R16F6', '2025-11-28 15:09:53.048314', '2025-11-28 15:09:53.048325')
+2025-11-28 15:09:53,113 INFO sqlalchemy.engine.Engine COMMIT
+2025-11-28 15:09:53,174 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:53,175 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.id = ?
+2025-11-28 15:09:53,178 INFO sqlalchemy.engine.Engine [cached since 127.6s ago] (6,)
+INFO:     127.0.0.1:53390 - "POST /auth/register HTTP/1.1" 200 OK
+2025-11-28 15:09:53,189 INFO sqlalchemy.engine.Engine ROLLBACK
+2025-11-28 15:09:53,210 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:53,217 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:09:53,217 INFO sqlalchemy.engine.Engine [cached since 130.5s ago] ('invalidemail',)
+2025-11-28 15:09:53,221 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.email = ?
+2025-11-28 15:09:53,223 INFO sqlalchemy.engine.Engine [cached since 130.5s ago] ('invalid-email',)
+2025-11-28 15:09:54,505 INFO sqlalchemy.engine.Engine INSERT INTO user (username, email, full_name, is_active, is_superuser, hashed_password, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-28 15:09:54,506 INFO sqlalchemy.engine.Engine [cached since 129.1s ago] ('invalidemail', 'invalid-email', 'Invalid Email User', 1, 0, '$2b$12$SJSDiEX3K/unUvqiPVnXR.T50FSXvU0RpLUGjV3QFwDNfmvo0NzVK', '2025-11-28 15:09:54.502379', '2025-11-28 15:09:54.502422')
+2025-11-28 15:09:54,511 INFO sqlalchemy.engine.Engine COMMIT
+2025-11-28 15:09:54,559 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:54,561 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.id = ?
+2025-11-28 15:09:54,562 INFO sqlalchemy.engine.Engine [cached since 128.9s ago] (7,)
+INFO:     127.0.0.1:39982 - "POST /auth/register HTTP/1.1" 200 OK
+2025-11-28 15:09:54,590 INFO sqlalchemy.engine.Engine ROLLBACK
+2025-11-28 15:09:54,648 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:54,650 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:09:54,650 INFO sqlalchemy.engine.Engine [cached since 131.9s ago] ('testuser',)
+2025-11-28 15:09:56,039 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:39990 - "POST /auth/login HTTP/1.1" 401 Unauthorized
+2025-11-28 15:09:56,078 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:56,081 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:09:56,082 INFO sqlalchemy.engine.Engine [cached since 133.4s ago] ('testuser',)
+2025-11-28 15:09:57,246 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:40002 - "POST /auth/login HTTP/1.1" 401 Unauthorized
+2025-11-28 15:09:57,297 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:09:57,299 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:09:57,299 INFO sqlalchemy.engine.Engine [cached since 134.6s ago] ('nonexistent',)
+2025-11-28 15:09:57,311 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:40012 - "POST /auth/login HTTP/1.1" 401 Unauthorized
+2025-11-28 15:11:33,031 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:11:33,037 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:11:33,070 INFO sqlalchemy.engine.Engine [cached since 230.4s ago] ('manualtest',)
+2025-11-28 15:11:33,088 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.email = ?
+2025-11-28 15:11:33,158 INFO sqlalchemy.engine.Engine [cached since 230.4s ago] ('manual@example.com',)
+2025-11-28 15:11:35,800 INFO sqlalchemy.engine.Engine INSERT INTO user (username, email, full_name, is_active, is_superuser, hashed_password, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-28 15:11:35,805 INFO sqlalchemy.engine.Engine [cached since 230.3s ago] ('manualtest', 'manual@example.com', 'Manual Test', 1, 0, '$2b$12$J0yl4ItD/MP042ZXG.H7E.Q4I8bSzl6B2PA5ejKR/.PrDrw77Dl72', '2025-11-28 15:11:35.771426', '2025-11-28 15:11:35.771441')
+2025-11-28 15:11:35,814 INFO sqlalchemy.engine.Engine COMMIT
+2025-11-28 15:11:35,909 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:11:35,917 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.id = ?
+2025-11-28 15:11:35,920 INFO sqlalchemy.engine.Engine [cached since 230.3s ago] (8,)
+INFO:     127.0.0.1:60230 - "POST /auth/register HTTP/1.1" 200 OK
+2025-11-28 15:11:35,954 INFO sqlalchemy.engine.Engine ROLLBACK
+2025-11-28 15:11:35,968 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:11:35,969 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:11:35,969 INFO sqlalchemy.engine.Engine [cached since 233.3s ago] ('manualtest',)
+INFO:     127.0.0.1:60232 - "POST /auth/login HTTP/1.1" 200 OK
+2025-11-28 15:11:38,766 INFO sqlalchemy.engine.Engine ROLLBACK
+2025-11-28 15:11:38,813 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:11:38,814 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:11:38,814 INFO sqlalchemy.engine.Engine [cached since 236.1s ago] ('manualtest',)
+INFO:     127.0.0.1:60244 - "GET /auth/me HTTP/1.1" 200 OK
+2025-11-28 15:11:38,901 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:56678 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56678 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56678 - "GET /openapi.json HTTP/1.1" 200 OK
+2025-11-28 15:14:28,943 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:14:28,948 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:14:28,950 INFO sqlalchemy.engine.Engine [cached since 406.2s ago] ('string',)
+2025-11-28 15:14:28,956 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.email = ?
+2025-11-28 15:14:28,958 INFO sqlalchemy.engine.Engine [cached since 406.2s ago] ('string',)
+2025-11-28 15:14:29,847 INFO sqlalchemy.engine.Engine INSERT INTO user (username, email, full_name, is_active, is_superuser, hashed_password, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+2025-11-28 15:14:29,853 INFO sqlalchemy.engine.Engine [cached since 404.4s ago] ('string', 'string', 'string', 1, 0, '$2b$12$EpkMgkH8W.V7GTul4zqpFuvkpp7PfJbIyxlwko8BLwQYTNCpT9qZi', '2025-11-28 15:14:29.846227', '2025-11-28 15:14:29.846241')
+2025-11-28 15:14:29,865 INFO sqlalchemy.engine.Engine COMMIT
+2025-11-28 15:14:29,903 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:14:29,904 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.id = ?
+2025-11-28 15:14:29,904 INFO sqlalchemy.engine.Engine [cached since 404.3s ago] (9,)
+INFO:     127.0.0.1:56678 - "POST /auth/register HTTP/1.1" 200 OK
+2025-11-28 15:14:29,926 INFO sqlalchemy.engine.Engine ROLLBACK
+2025-11-28 15:14:48,869 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+2025-11-28 15:14:48,871 INFO sqlalchemy.engine.Engine SELECT user.username, user.email, user.full_name, user.is_active, user.is_superuser, user.id, user.hashed_password, user.created_at, user.updated_at 
+FROM user 
+WHERE user.username = ?
+2025-11-28 15:14:48,872 INFO sqlalchemy.engine.Engine [cached since 426.2s ago] ('string',)
+INFO:     127.0.0.1:56668 - "POST /auth/login HTTP/1.1" 200 OK
+2025-11-28 15:14:49,720 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO:     127.0.0.1:56692 - "GET /users/?skip=0&limit=100 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:56692 - "GET /users/?skip=0&limit=100 HTTP/1.1" 401 Unauthorized
